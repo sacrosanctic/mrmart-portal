@@ -16,14 +16,15 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/supersized.css" rel="stylesheet">
+        <link href="ss-theme/supersized.shutter.css" rel="stylesheet">
       <style>
           body {
-            background-image:url("img/bg.jpg");
+            background-image:url("img/bg.png");
           }
           div.wrapper {
             width: 800px;
-            background: #fff;
-            border: 1px solid black;
+            background: #BDF9A2;
             margin: 0 auto;
             padding: 10px;
           }
@@ -35,8 +36,42 @@
             //position: absolute;
             //right: 0px;
           }
+          #ss-slideshow {
+            height:300px;
+            width:100%;
+          }
+          supersized li {
+            background:none;
+          }
         </style>
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/modernizr-2.6.2.min.js"></script>
+        <script src="js/supersized.3.2.7.min.js"></script>
+        <script src="ss-theme/supersized.shutter.min.js"></script>
+        <script type="text/javascript">
+			
+          jQuery(function($){
+            
+            $.supersized({
+            
+              // Functionality
+              slide_interval      :   10000,		// Length between transitions
+              transition          :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+              fit_landscape       : 1,
+              transition_speed		:	3,	   	// Speed of transition
+                                     
+              // Components							
+              slide_links			  	:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+              slides 			    		:  	[		  	// Slideshow Images
+                                {image : './img/gal1.jpg'},
+                                {image : './img/gal2.jpg'}
+                            ]
+              
+            });
+            });
+		    
+		</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -46,43 +81,54 @@
         <!-- Add your site or application content here -->
         <div class="wrapper">
           <h1>MRART</h1>
-          
           <div id="mainlink">
             <ul class="nav nav-pills">
               <li><a href="#">FB</a></li>
               <li><a href="#">DA</a></li>
               <li><a href="#">Store</a></li>
+              <li><a href="#">About Us</a></li>
             </ul>
           </div>
         </div>
         <div class="wrapper">
-          Image Gallery
+          <h4>Image Gallery</h4>
+          <div id="ss-slideshow">
+            <!--Control Bar-->
+            <div id="controls-wrapper" class="load-item">
+              <div id="controls">
+                <!--Navigation-->
+                <ul id="slide-list"></ul>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="wrapper">
+          <h4>Artist</h4>
           <div class="media">
-            <a class="pull-left" href="#">
+            <div class="pull-left">
               <img class="media-object" src="" alt="...">
-            </a>
+            </div>
             <div class="media-body">
-              <h4 class="media-heading">Name</h4>
+              <h4 class="media-heading">Susy Hsi</h4>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
           <div class="media">
-            <a class="pull-left" href="#">
+            <div class="pull-left">
               <img class="media-object" src="" alt="...">
-            </a>
+            </div>
             <div class="media-body">
-              <h4 class="media-heading">Name</h4>
+              <h4 class="media-heading">Jessica Mok</h4>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
           <div class="media">
-            <a class="pull-left" href="#">
+            <div class="pull-left">
               <img class="media-object" src="" alt="...">
-            </a>
+            </div>
             <div class="media-body">
-              <h4 class="media-heading">Name</h4>
+              <h4 class="media-heading">Andrea Low</h4>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
           </div>
